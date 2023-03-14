@@ -1,11 +1,13 @@
-Name:           foo
-Version:        0.1.0
+Name:           {{{ git_dir_name }}}
+Version:        {{{ git_dir_version }}}
 Release:        1%{?dist}
 Summary:        foo
 
 License:        MIT
 URL:            https://github.com/nikromen/foo
-Source0:        %{url}/archive/refs/tags/%{version}.tar.gz
+VCS:            {{{ git_dir_vcs }}}
+
+Source0:        {{{ git_dir_pack }}}
 
 BuildArch: noarch
 
@@ -15,7 +17,7 @@ BuildArch: noarch
 
 
 %prep
-%autosetup
+{{{ git_dir_setup_macro }}}
 
 
 %build
@@ -34,5 +36,4 @@ install -p -m 0755 bin/%(name) %{buildroot}%{_bindir}
 
 
 %changelog
-* Tue Mar 14 2023 Jiri Kyjovsky <j1.kyjovsky@gmail.com>
-- something
+{{{ git_dir_changelog }}}
