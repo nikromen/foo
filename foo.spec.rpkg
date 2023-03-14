@@ -25,13 +25,13 @@ BuildArch: noarch
 
 %install
 mkdir -p %{buildroot}%{_bindir}
-install -p -m 0755 bin/%(name) %{buildroot}%{_bindir}
+install -p -m 0755 bin/%{name} %{buildroot}%{_bindir}
 
 
 %files
 %license LICENSE
 %doc README.MD
-%{_bindir}/%(name)
+%{_bindir}/%{name}
 
 
 
