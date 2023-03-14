@@ -4,12 +4,16 @@ Release:        1%{?dist}
 Summary:        foo
 
 License:        MIT
-URL:            https://github.com/nikromen/foo
+URL:            https://github.com/nikromen/%{name}
 VCS:            {{{ git_dir_vcs }}}
 
 Source0:        {{{ git_dir_pack }}}
 
 BuildArch: noarch
+
+BuildRequires: bar
+
+Requires: bash
 
 
 %description
@@ -24,15 +28,13 @@ BuildArch: noarch
 
 
 %install
+rm -rf %{buidroot}
 mkdir -p %{buildroot}%{_bindir}
-install -p -m 0755 bin/%{name} %{buildroot}%{_bindir}
+install -p -m 0775 %{name}.sh %{buildroot}%{_bindir}
 
 
 %files
-%license LICENSE
-%doc README.MD
-%{_bindir}/%{name}
-
+%{_bindir}/%{name}.sh
 
 
 %changelog
