@@ -12,6 +12,7 @@ Source0:        {{{ git_dir_pack }}}
 BuildArch: noarch
 
 BuildRequires: bar
+BuildRequires: python3-backoff
 
 Requires: bash
 
